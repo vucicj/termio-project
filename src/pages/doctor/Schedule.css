@@ -10,3 +10,16 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.schedule__hint {
+  color: var(--color-text-secondary);
+  margin-top: var(--space-5);
+}
+
+.schedule__past {
+  margin-top: var(--space-6);
+}
+
+.schedule__list--past {
+  margin-top: var(--space-4);
+}

@@ -115,7 +115,7 @@ function Appointments() {
                 </option>
                 {doctors.map((d) => (
                   <option key={d.id} value={d.id}>
-                    {d.full_name} — {d.specialization}
+                    {d.full_name}: {d.specialization}
                   </option>
                 ))}
               </select>

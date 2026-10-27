@@ -88,7 +88,7 @@ function Doctors() {
         <Card>
           <form className="admin-doctors__add-form" onSubmit={handleAdd}>
             <p className="admin-doctors__add-hint">
-              Osoba se mora prethodno sama registrirati kao pacijent — unesite njezinu e-mail adresu da je
+              Osoba se mora prethodno sama registrirati kao pacijent: unesite njezinu e-mail adresu da je
               promovirate u liječnika.
             </p>
             {addError && <p className="admin-doctors__error">{addError}</p>}

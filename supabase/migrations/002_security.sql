@@ -39,10 +39,6 @@ create trigger protect_profile_role_trigger
 before update on profiles
 for each row execute function protect_profile_role();
 
--- Pomoćne funkcije za RLS politike koje trebaju znati ulogu/ustanovu pozivatelja.
--- SECURITY DEFINER + vlasništvo tablice (postgres) znači da ovaj upit zaobilazi RLS,
--- što je ključno: kad bi politika na 'profiles' sama iznutra upitivala 'profiles',
--- Postgres bi prijavio "infinite recursion detected in policy".
 create or replace function my_role()
 returns user_role
 language sql
@@ -65,7 +61,7 @@ $$;
 
 -- Je li trenutni korisnik liječnik ili admin povezan s pacijentom p_patient_id
 -- (preko neke njegove rezervacije)? Cijela provjera je unutar SECURITY DEFINER
--- funkcije — ne samo dio koji čita 'profiles' — jer bi inače upit nad
+-- funkcije: ne samo dio koji čita 'profiles': jer bi inače upit nad
 -- 'reservations'/'appointments'/'doctors' (izvršen kao 'authenticated') opet
 -- pokrenuo RLS na tim tablicama, od kojih neke upituju natrag 'profiles'.
 create or replace function can_view_patient_profile(p_patient_id uuid)
@@ -165,7 +161,7 @@ with check (
 );
 
 -- reservations: pacijent vidi svoje, liječnik vidi rezervacije svojih termina,
--- admin vidi rezervacije svoje ustanove. Nema insert/update politika — svaka promjena
+-- admin vidi rezervacije svoje ustanove. Nema insert/update politika: svaka promjena
 -- statusa (rezerviraj, potvrdi, otkaži) ide isključivo kroz funkcije u 003_actions.sql.
 create policy "reservations_patient_read"
 on reservations for select

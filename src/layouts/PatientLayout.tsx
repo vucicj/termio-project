@@ -1,6 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom'
-import { Stethoscope, Search, Bell, CalendarPlus, UserCircle, LogOut } from 'lucide-react'
-import Button from '../components/Button'
+import { Stethoscope, UserCircle, LogOut } from 'lucide-react'
 import { useAuth } from '../features/auth/useAuth'
 import './PatientLayout.css'
 
@@ -17,27 +16,11 @@ function PatientLayout() {
 
         <nav className="patient-nav" aria-label="Navigacija pacijenta">
           <NavLink to="/pacijent" end>
-            Pregled ponude
+            Početna
           </NavLink>
           <NavLink to="/pacijent/rezervacije">Moje rezervacije</NavLink>
           <NavLink to="/pacijent/profil">Moj profil</NavLink>
         </nav>
-
-        <div className="patient-search">
-          <Search size={16} aria-hidden="true" />
-          <input type="search" placeholder="Pretraži ustanove, liječnike ili specijalizacije..." />
-        </div>
-
-        <button type="button" className="patient-icon-btn" aria-label="Obavijesti">
-          <Bell size={18} aria-hidden="true" />
-        </button>
-
-        <NavLink to="/pacijent">
-          <Button variant="primary">
-            <CalendarPlus size={16} aria-hidden="true" />
-            Nova rezervacija
-          </Button>
-        </NavLink>
 
         <div className="patient-user">
           <UserCircle size={28} aria-hidden="true" />

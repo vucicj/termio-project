@@ -39,27 +39,6 @@
   color: var(--color-primary);
 }
 
-.patient-search {
-  flex: 1;
-  min-width: 200px;
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-2) var(--space-3);
-  background-color: var(--color-surface-muted);
-  border-radius: var(--radius-sm);
-  color: var(--color-text-secondary);
-}
-
-.patient-search input {
-  border: none;
-  background: transparent;
-  outline: none;
-  width: 100%;
-  font-size: 0.9375rem;
-  color: var(--color-text);
-}
-
 .patient-icon-btn {
   display: inline-flex;
   align-items: center;
@@ -77,6 +56,7 @@
   display: flex;
   align-items: center;
   gap: var(--space-2);
+  margin-left: auto;
   color: var(--color-text-secondary);
 }
 
@@ -95,9 +75,5 @@
   .patient-nav {
     order: 3;
     width: 100%;
-  }
-
-  .patient-search {
-    order: 2;
   }
 }

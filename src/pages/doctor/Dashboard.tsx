@@ -51,7 +51,7 @@ function Dashboard() {
     (a) => a.start_at >= pocetakDanasnjegDana() && a.start_at <= krajDanasnjegDana() && a.status === 'booked',
   )
   const naCekanju = reservations.filter((r) => r.status === 'pending')
-  const nadolazece = reservations.filter((r) => r.status !== 'cancelled' && r.start_at > new Date().toISOString())
+  const nadolazece = reservations.filter((r) => r.status === 'confirmed' && r.start_at > new Date().toISOString())
 
   return (
     <div>
@@ -72,7 +72,7 @@ function Dashboard() {
         <Card>
           <ClipboardList size={20} aria-hidden="true" />
           <p className="dashboard__stat-value">{nadolazece.length}</p>
-          <p className="dashboard__stat-label">Nadolazećih rezervacija</p>
+          <p className="dashboard__stat-label">Potvrđenih nadolazećih</p>
         </Card>
       </div>
 

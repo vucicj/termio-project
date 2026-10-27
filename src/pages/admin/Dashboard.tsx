@@ -58,6 +58,7 @@ function Dashboard() {
     (a) => a.start_at >= pocetakDanasnjegDana() && a.start_at <= krajDanasnjegDana() && a.status === 'booked',
   )
   const naCekanju = reservations.filter((r) => r.status === 'pending')
+  const aktivne = reservations.filter((r) => r.status !== 'cancelled')
 
   return (
     <div>
@@ -84,18 +85,17 @@ function Dashboard() {
 
       <h2 className="dashboard__section-title">Nedavne rezervacije</h2>
 
-      {reservations.length === 0 && (
-        <EmptyState icon={Hourglass} title="Trenutno nema rezervacija u vašoj ustanovi" />
+      {aktivne.length === 0 && (
+        <EmptyState icon={Hourglass} title="Trenutno nema aktivnih rezervacija u vašoj ustanovi" />
       )}
 
       <div className="dashboard__list">
-        {reservations.slice(0, 5).map((r) => (
+        {aktivne.slice(0, 5).map((r) => (
           <Card key={r.id}>
             <div className="dashboard__row">
               <div>
-                <p className="dashboard__row-title">
-                  {r.patient_name} — {r.doctor_name}
-                </p>
+                <p className="dashboard__row-title">Pacijent: {r.patient_name}</p>
+                <p className="dashboard__row-title">Liječnik: {r.doctor_name}</p>
                 <p className="dashboard__row-meta">{formatDateTime(r.start_at)}</p>
               </div>
               <Badge tone={RESERVATION_STATUS_TONE[r.status]}>{RESERVATION_STATUS_LABEL[r.status]}</Badge>

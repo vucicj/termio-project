@@ -102,9 +102,8 @@ function Reservations() {
               <Card key={r.id}>
                 <div className="admin-reservations__row">
                   <div>
-                    <p className="admin-reservations__title">
-                      {r.patient_name} — {r.doctor_name}
-                    </p>
+                    <p className="admin-reservations__title">Pacijent: {r.patient_name}</p>
+                    <p className="admin-reservations__title">Liječnik: {r.doctor_name}</p>
                     <p className="admin-reservations__meta">{formatDateTime(r.start_at)}</p>
                   </div>
                   <Badge tone={RESERVATION_STATUS_TONE[r.status]}>{RESERVATION_STATUS_LABEL[r.status]}</Badge>
