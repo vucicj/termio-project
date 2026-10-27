@@ -1,0 +1,12 @@
+.schedule__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.schedule__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

@@ -1,0 +1,40 @@
+:root {
+  /* Forest Classic paleta */
+  --color-bg: #faf8f3;
+  --color-surface: #ffffff;
+  --color-surface-muted: #f3f1ea;
+  --color-border: #e4e0d4;
+
+  --color-primary: #1f3d2e;
+  --color-primary-hover: #16301f;
+  --color-primary-soft: #e8efe7;
+
+  --color-text: #1c1c18;
+  --color-text-secondary: #6b6a60;
+  --color-text-on-primary: #ffffff;
+
+  --color-success: #2f7a4f;
+  --color-success-soft: #e7f3ea;
+  --color-warning: #b3791f;
+  --color-warning-soft: #faf0dd;
+  --color-danger: #b3362c;
+  --color-danger-soft: #fbeae8;
+
+  --font-heading: "Outfit", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --shadow-sm: 0 1px 2px rgba(28, 28, 24, 0.06);
+  --shadow-md: 0 4px 12px rgba(28, 28, 24, 0.08);
+}

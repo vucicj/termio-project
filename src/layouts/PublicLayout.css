@@ -1,0 +1,68 @@
+.public-layout {
+  min-height: 100vh;
+}
+
+.public-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.public-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1.125rem;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.public-nav {
+  display: flex;
+  gap: var(--space-5);
+  flex: 1;
+}
+
+.public-nav a {
+  text-decoration: none;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  font-size: 0.9375rem;
+}
+
+.public-nav a.active {
+  color: var(--color-primary);
+}
+
+.public-actions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.public-actions a {
+  text-decoration: none;
+}
+
+.public-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-6);
+}
+
+@media (max-width: 720px) {
+  .public-header {
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+
+  .public-nav {
+    order: 3;
+    width: 100%;
+    gap: var(--space-4);
+  }
+}

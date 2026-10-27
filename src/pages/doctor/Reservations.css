@@ -1,0 +1,38 @@
+.doctor-reservations__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.doctor-reservations__item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.doctor-reservations__patient {
+  margin: 0 0 var(--space-1);
+  font-weight: 500;
+}
+
+.doctor-reservations__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.doctor-reservations__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.doctor-reservations__error {
+  color: var(--color-danger);
+  margin-bottom: var(--space-4);
+}

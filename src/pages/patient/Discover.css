@@ -1,0 +1,68 @@
+.discover__subtitle {
+  color: var(--color-text-secondary);
+  margin: var(--space-2) 0 var(--space-6);
+}
+
+.discover__actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-7);
+}
+
+.discover__actions a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.discover__actions svg {
+  color: var(--color-primary);
+  margin-bottom: var(--space-3);
+}
+
+.discover__actions h2 {
+  font-size: 1.0625rem;
+  margin-bottom: var(--space-1);
+}
+
+.discover__actions p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+}
+
+.discover__section-title {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-4);
+}
+
+.discover__empty {
+  color: var(--color-text-secondary);
+}
+
+.discover__reservations {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.discover__reservation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.discover__reservation-doctor {
+  margin: 0 0 var(--space-1);
+  font-weight: 500;
+}
+
+.discover__reservation-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}

@@ -1,0 +1,43 @@
+.clinic-detail__meta {
+  display: flex;
+  gap: var(--space-5);
+  color: var(--color-text-secondary);
+  margin: var(--space-3) 0 var(--space-6);
+}
+
+.clinic-detail__meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.clinic-detail__section-title {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-4);
+}
+
+.clinic-detail__doctors {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+
+.clinic-detail__doctor-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.clinic-detail__doctor-link h3 {
+  font-size: 1rem;
+  margin-bottom: var(--space-1);
+}
+
+.clinic-detail__doctor-link p {
+  margin: 0;
+  color: var(--color-text-secondary);
+  font-size: 0.9375rem;
+}
+
+.clinic-detail__error {
+  color: var(--color-danger);
+}
