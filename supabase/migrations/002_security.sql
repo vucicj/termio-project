@@ -1,16 +1,3 @@
--- Termio — Faza 3, migracija 2: trigeri, RLS politike, pristupna prava
---
--- Princip: jednostavne izmjene polja (npr. admin uređuje naziv ustanove ili
--- specijalizaciju liječnika) dopuštene su izravno kroz RLS politike. Akcije koje
--- mijenjaju status i imaju posljedice na druge tablice (rezerviraj, otkaži,
--- potvrdi) idu isključivo kroz imenovane funkcije u bazi (vidi 003_actions.sql),
--- jer tamo treba atomična provjera i usklađivanje više tablica odjednom.
-
--- ============================================================
--- TRIGERI
--- ============================================================
-
--- Kad se netko registrira (auth.users), automatski mu se kreira profil s ulogom 'patient'.
 create or replace function handle_new_user()
 returns trigger
 language plpgsql
@@ -33,10 +20,6 @@ create trigger on_auth_user_created
 after insert on auth.users
 for each row execute function handle_new_user();
 
--- Korisnik ne smije sam sebi promijeniti ulogu ili ustanovu kroz običan update profila.
--- Ako to pokuša obični prijavljeni korisnik, promjena se tiho poništi. Promjenu smije
--- provesti samo postupak izvan 'authenticated' konteksta (SQL Editor kao vlasnik baze)
--- — to je naš ručni postupak promocije korisnika u liječnika/admina.
 create or replace function protect_profile_role()
 returns trigger
 language plpgsql

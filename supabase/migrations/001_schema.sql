@@ -1,6 +1,3 @@
--- Termio — Faza 3, migracija 1: shema baze
--- Uklanja testne tablice iz Faze 1 i postavlja punu shemu.
-
 drop table if exists termini;
 drop table if exists lijecnici;
 
@@ -16,7 +13,6 @@ create table clinics (
   created_at timestamptz not null default now()
 );
 
--- profiles.id = auth.users.id; red se kreira automatski trigerom (vidi 002_security.sql)
 create table profiles (
   id uuid primary key references auth.users(id) on delete cascade,
   full_name text not null,
@@ -34,7 +30,6 @@ create table doctors (
   created_at timestamptz not null default now()
 );
 
--- Termin (vremenski slot) koji otvori liječnik/admin. Fiksno trajanje: 30 min (konstanta u kodu).
 create table appointments (
   id uuid primary key default gen_random_uuid(),
   doctor_id uuid not null references doctors(id),
@@ -46,7 +41,6 @@ create table appointments (
 create index idx_appointments_doctor on appointments(doctor_id);
 create index idx_appointments_start_at on appointments(start_at);
 
--- Pacijentova rezervacija konkretnog termina.
 create table reservations (
   id uuid primary key default gen_random_uuid(),
   appointment_id uuid not null references appointments(id),
